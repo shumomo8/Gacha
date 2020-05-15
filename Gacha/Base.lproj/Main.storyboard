@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,111 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Gacha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gacha.png" translatesAutoresizingMaskIntoConstraints="NO" id="A2N-TA-Wbn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="モンスターガチャ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZv-gw-saU">
+                                <rect key="frame" x="95" y="174" width="225" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="y3V-ET-vgV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpy-w8-tgk">
+                                <rect key="frame" x="164" y="392" width="47" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="ひく"/>
+                                <connections>
+                                    <segue destination="xEA-zo-Xga" kind="presentation" modalTransitionStyle="crossDissolve" id="kw1-Nd-wXK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uZv-gw-saU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="95" id="1S8-gA-jKD"/>
+                            <constraint firstItem="Lpy-w8-tgk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="184" id="8KO-6k-eu2"/>
+                            <constraint firstAttribute="bottom" secondItem="A2N-TA-Wbn" secondAttribute="bottom" id="BJd-cj-hVn"/>
+                            <constraint firstItem="A2N-TA-Wbn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DNd-ig-Cji"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Lpy-w8-tgk" secondAttribute="bottom" constant="114" id="Kod-zl-fXe"/>
+                            <constraint firstItem="A2N-TA-Wbn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WJq-aZ-dOV"/>
+                            <constraint firstItem="uZv-gw-saU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="174" id="e3e-Vh-2vm"/>
+                            <constraint firstItem="A2N-TA-Wbn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eGB-1Y-iwU"/>
+                            <constraint firstItem="A2N-TA-Wbn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hNf-y2-2qg"/>
+                            <constraint firstItem="uZv-gw-saU" firstAttribute="centerX" secondItem="Lpy-w8-tgk" secondAttribute="centerX" id="kHT-fp-HJP"/>
+                            <constraint firstItem="A2N-TA-Wbn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qVL-C4-5D0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="5Y1-L6-Sv8">
+            <objects>
+                <viewController id="xEA-zo-Xga" customClass="ResultViewController" customModule="Gacha" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3zP-uc-GWh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="hLb-a1-zfi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mlS-F7-zpD">
+                                <rect key="frame" x="61" y="197" width="253" height="253"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mlS-F7-zpD" secondAttribute="height" multiplier="1:1" id="2nd-o9-qGA"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPs-4o-gaD">
+                                <rect key="frame" x="30" y="77" width="57" height="31"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="19"/>
+                                <state key="normal" title="もどる">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="back" destination="xEA-zo-Xga" eventType="touchUpInside" id="vyd-Yf-qJy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mlS-F7-zpD" firstAttribute="centerX" secondItem="3zP-uc-GWh" secondAttribute="centerX" id="2LT-eg-xcV"/>
+                            <constraint firstItem="jPs-4o-gaD" firstAttribute="leading" secondItem="sjM-Ue-ZB4" secondAttribute="leading" constant="30" id="743-fD-mbW"/>
+                            <constraint firstItem="sjM-Ue-ZB4" firstAttribute="bottom" secondItem="mlS-F7-zpD" secondAttribute="bottom" constant="197" id="8hc-Dt-GuD"/>
+                            <constraint firstItem="hLb-a1-zfi" firstAttribute="leading" secondItem="sjM-Ue-ZB4" secondAttribute="leading" id="Nyd-nG-qQR"/>
+                            <constraint firstItem="mlS-F7-zpD" firstAttribute="centerY" secondItem="3zP-uc-GWh" secondAttribute="centerY" id="OFA-OP-V22"/>
+                            <constraint firstItem="sjM-Ue-ZB4" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jPs-4o-gaD" secondAttribute="trailing" symbolic="YES" id="Oeq-LY-zjn"/>
+                            <constraint firstItem="sjM-Ue-ZB4" firstAttribute="trailing" secondItem="hLb-a1-zfi" secondAttribute="trailing" id="afe-5w-JYZ"/>
+                            <constraint firstItem="mlS-F7-zpD" firstAttribute="centerY" secondItem="3zP-uc-GWh" secondAttribute="centerY" id="cEF-ra-mbL"/>
+                            <constraint firstItem="mlS-F7-zpD" firstAttribute="top" secondItem="jPs-4o-gaD" secondAttribute="bottom" constant="89" id="df0-wa-4Xv"/>
+                            <constraint firstAttribute="bottom" secondItem="hLb-a1-zfi" secondAttribute="bottom" id="lxr-jj-qbo"/>
+                            <constraint firstItem="hLb-a1-zfi" firstAttribute="top" secondItem="sjM-Ue-ZB4" secondAttribute="top" id="rM0-h7-Ln2"/>
+                            <constraint firstItem="mlS-F7-zpD" firstAttribute="centerX" secondItem="3zP-uc-GWh" secondAttribute="centerX" id="xni-F9-dAl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sjM-Ue-ZB4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uGd-dP-PuS"/>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="hLb-a1-zfi" id="11e-Zq-NuB"/>
+                        <outlet property="monsterImageView" destination="mlS-F7-zpD" id="2LJ-PW-Cjv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zyd-02-aeY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="800" y="115"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg_blue.png" width="300" height="300"/>
+        <image name="gacha.png" width="225" height="339"/>
+    </resources>
 </document>
